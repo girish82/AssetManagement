@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { AssetsComponent } from './assets/assets.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     HomeComponent,
     AssetsComponent,
-    LoginComponent
+    LoginComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
