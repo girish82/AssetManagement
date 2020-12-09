@@ -1,1 +1,34 @@
-<p>assets works!</p>
+<div class="row">
+  <div class="col-md-11 mx-auto mt-5">
+    <p class="lead p-2 text-center text-white bg-success">Complete Assets List</p>
+    <div class="mb-2 text-right">
+      <button class="btn btn-primary" (click)="goAdd()">Add Assets</button>
+    </div>
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <th>TagNo.</th>
+        <th>Description</th>
+        <th>Material</th>
+        <th>Insulation</th>
+        <th>Valve</th>
+        <th>UpdateNo.</th>
+        <th>Id</th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let asset of assets">
+          <td>{{asset.soloData.tagNumber}}</td>
+          <td>{{asset.soloData.description}}</td>
+          <td>{{asset.soloData.material}}</td>
+          <td>{{asset.soloData.insulation}}</td>
+          <td>{{asset.soloData.valvemodal}}</td>
+          <td>{{asset.commonData.updateNumber}}</td>
+          <td>{{asset._id}}</td>
+          <td><a class="btn btn-link" (click)="goEdit(asset._id)">Edit</a></td>
+          <td><a class="btn btn-link text-danger" (click)=goDelete(asset._id)>Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

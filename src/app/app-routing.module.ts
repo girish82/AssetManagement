@@ -19,7 +19,10 @@ const routes: Routes = [
     path: 'assets', component: AssetsComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'assetsadd', component: AsseteditComponent, canActivate: [AuthGuard]
+    path: 'assets/add', component: AsseteditComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'assets/edit/:id', component: AsseteditComponent, canActivate: [AuthGuard]
   },
   {
     path: 'login', component: LoginComponent

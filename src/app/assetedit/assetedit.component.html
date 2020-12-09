@@ -6,31 +6,38 @@
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="soloDataLink">SoloDataLink</label>
-          <input type="text" class="form-control" name="soloDataLink" ngModel>
+          <input type="text" class="form-control"
+          name="soloDataLink" ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.soloDataLink">
         </div>
         <div class="form-group col-md-4">
           <label for="tagNumber">Tag Number</label>
-          <input type="text" class="form-control" name="tagNumber" ngModel>
+          <input type="text" class="form-control" name="tagNumber" ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.tagNumber">>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="description">Description</label>
-          <input type="text" class="form-control" name="description" ngModel>
+          <input type="text" class="form-control" name="description" ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.description">>
         </div>
         <div class="form-group col-md-4">
           <label for="material">Material</label>
-          <input type="text" class="form-control" name="material" ngModel>
+          <input type="text" class="form-control" name="material" ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.material">>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="insulation">Insulation</label>
-          <input type="text" class="form-control" name="insulation" ngModel>
+          <input type="text" class="form-control" name="insulation" ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.insulation">>
         </div>
         <div class="form-group col-md-4">
           <label for="valvemodal">Valve Modal</label>
-          <input type="text" class="form-control" name="valvemodal" ngModel>
+          <input type="text" class="form-control" name="valvemodal" ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.valvemodal">>
         </div>
       </div>
     </div>
@@ -39,28 +46,32 @@
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="commonDataLink">Common Data Link</label>
-          <input type="text" class="form-control" name="commonDataLink" ngModel>
+          <input type="text" class="form-control" name="commonDataLink" ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.commonData.commonDataLink">
         </div>
         <div class="form-group col-md-4">
           <label for="updateNumber">Update Number</label>
-          <input type="text" class="form-control" name="updateNumber" ngModel>
+          <input type="text" class="form-control" name="updateNumber" ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.commonData.updateNumber">>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="commodity">Commodity</label>
-          <input type="text" class="form-control" name="commodity" ngModel>
+          <input type="text" class="form-control" name="commodity" ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.commonData.commodity">>
         </div>
         <div class="form-group col-md-4">
           <label for="temperature">Temperature</label>
-          <input type="text" class="form-control" name="temperature" ngModel>
+          <input type="text" class="form-control" name="temperature" ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.commonData.temperature">>
         </div>
       </div>
       </div>
       <div class="form-row">
       <div class="form-group text-right col-md-8">
         <button class="btn btn-danger" (click)="onCancel()">Cancel</button>
-        <button class="btn btn-success m-1" type="submit">Add Assets</button>
+        <button class="btn btn-success m-1" type="submit">{{addEditCaption}}</button>
       </div>
     </div>
     </form>
