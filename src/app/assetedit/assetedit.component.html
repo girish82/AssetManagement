@@ -1,43 +1,45 @@
 <div class="row">
   <div class="col-md-10 offset-md-2 mt-5">
     <form (ngSubmit)="onSubmit(dataForm)" #dataForm="ngForm">
+      <p *ngIf="!dataForm.valid" class="text-white text-center bg-danger col-md-8">
+        Please fill in all the fields to proceed</p>
       <p class="lead text-white text-center bg-dark col-md-8">Solo Data</p>
       <div ngModelGroup="soloData">
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="soloDataLink">SoloDataLink</label>
-          <input type="text" class="form-control"
+          <input type="text" class="form-control" required
           name="soloDataLink" ngModel
           [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.soloDataLink">
         </div>
         <div class="form-group col-md-4">
           <label for="tagNumber">Tag Number</label>
-          <input type="text" class="form-control" name="tagNumber" ngModel
-          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.tagNumber">>
+          <input type="text" class="form-control" name="tagNumber" required ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.tagNumber">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="description">Description</label>
-          <input type="text" class="form-control" name="description" ngModel
-          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.description">>
+          <input type="text" class="form-control" name="description" required ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.description">
         </div>
         <div class="form-group col-md-4">
           <label for="material">Material</label>
-          <input type="text" class="form-control" name="material" ngModel
-          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.material">>
+          <input type="text" class="form-control" name="material" required ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.material">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="insulation">Insulation</label>
-          <input type="text" class="form-control" name="insulation" ngModel
-          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.insulation">>
+          <input type="text" class="form-control" name="insulation" required ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.insulation">
         </div>
         <div class="form-group col-md-4">
           <label for="valvemodal">Valve Modal</label>
-          <input type="text" class="form-control" name="valvemodal" ngModel
-          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.valvemodal">>
+          <input type="text" class="form-control" name="valvemodal" required ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.soloData.valvemodal">
         </div>
       </div>
     </div>
@@ -46,32 +48,32 @@
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="commonDataLink">Common Data Link</label>
-          <input type="text" class="form-control" name="commonDataLink" ngModel
+          <input type="text" class="form-control" name="commonDataLink" required ngModel
           [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.commonData.commonDataLink">
         </div>
         <div class="form-group col-md-4">
           <label for="updateNumber">Update Number</label>
-          <input type="text" class="form-control" name="updateNumber" ngModel
-          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.commonData.updateNumber">>
+          <input type="text" class="form-control" name="updateNumber" required ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.commonData.updateNumber">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="commodity">Commodity</label>
-          <input type="text" class="form-control" name="commodity" ngModel
-          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.commonData.commodity">>
+          <input type="text" class="form-control" name="commodity" required ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.commonData.commodity">
         </div>
         <div class="form-group col-md-4">
           <label for="temperature">Temperature</label>
-          <input type="text" class="form-control" name="temperature" ngModel
-          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.commonData.temperature">>
+          <input type="text" class="form-control" name="temperature" required ngModel
+          [(ngModel)]="assetData === undefined ? '' : assetData.assetExist.commonData.temperature">
         </div>
       </div>
       </div>
       <div class="form-row">
       <div class="form-group text-right col-md-8">
         <button class="btn btn-danger" (click)="onCancel()">Cancel</button>
-        <button class="btn btn-success m-1" type="submit">{{addEditCaption}}</button>
+        <button class="btn btn-success m-1" type="submit" [disabled]="!dataForm.valid">{{addEditCaption}}</button>
       </div>
     </div>
     </form>

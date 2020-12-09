@@ -12,7 +12,6 @@
         <th>Insulation</th>
         <th>Valve</th>
         <th>UpdateNo.</th>
-        <th>Id</th>
         <th></th>
         <th></th>
       </thead>
@@ -24,7 +23,6 @@
           <td>{{asset.soloData.insulation}}</td>
           <td>{{asset.soloData.valvemodal}}</td>
           <td>{{asset.commonData.updateNumber}}</td>
-          <td>{{asset._id}}</td>
           <td><a class="btn btn-link" (click)="goEdit(asset._id)">Edit</a></td>
           <td><a class="btn btn-link text-danger" (click)=goDelete(asset._id)>Delete</a></td>
         </tr>

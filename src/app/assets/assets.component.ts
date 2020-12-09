@@ -12,6 +12,7 @@ export class AssetsComponent implements OnInit, OnDestroy {
 
   assets: any;
   assetSubs: Subscription;
+  deleteSubs: Subscription;
   constructor(private assetService: AssetsService,
               private router: Router) { }
 
@@ -34,7 +35,7 @@ export class AssetsComponent implements OnInit, OnDestroy {
 
   goDelete(id: string) {
     const dele = window.confirm('Do you want to delete ?');
-    this.assetService.DeleteAssets(id)
+    this.deleteSubs = this.assetService.DeleteAssets(id)
     .subscribe((res) =>
     {
       this.fetchAssets();
@@ -47,6 +48,5 @@ export class AssetsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.assetSubs.unsubscribe();
   }
 }
