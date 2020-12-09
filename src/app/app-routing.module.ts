@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AsseteditComponent } from './assetedit/assetedit.component';
 import { AssetsComponent } from './assets/assets.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +17,9 @@ const routes: Routes = [
   },
   {
     path: 'assets', component: AssetsComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'assetsadd', component: AsseteditComponent, canActivate: [AuthGuard]
   },
   {
     path: 'login', component: LoginComponent

@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { UsersComponent } from './users/users.component';
+import { AsseteditComponent } from './assetedit/assetedit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UsersComponent } from './users/users.component';
     HomeComponent,
     AssetsComponent,
     LoginComponent,
-    UsersComponent
+    UsersComponent,
+    AsseteditComponent
   ],
   imports: [
     BrowserModule,
